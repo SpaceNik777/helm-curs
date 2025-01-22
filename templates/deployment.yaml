@@ -15,7 +15,7 @@ spec:
         {{ - toYaml . | nindent 8 }}
           {{ - end }}
     spec:
-      serviceAccountName: test
+      serviceAccountName: {{ include "demo-app.serviceAccountName" . }}
       containers:
         - name: demo-app
           image: "{{ .Values.image.repos }}:{{ .Values.image.ver }}"
