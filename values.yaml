@@ -33,6 +33,15 @@ autoscaling:
   metricName: "http_requests_per_second" 
   averageValue: "10"
 
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+
 serviceMonitor:
   enabled: true
   interval: 1s
